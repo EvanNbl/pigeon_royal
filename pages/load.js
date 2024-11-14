@@ -20,13 +20,13 @@ export default function Maintenance() {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '100px' }}>
       <h1>Site en Maintenance</h1>
-      <p>Entrez le code d'accès pour continuer.</p>
+      <p>Entrez le code d&apos;accès pour continuer.</p>
       <form onSubmit={handleSubmit}>
         <input 
           type="password" 
           value={code} 
           onChange={(e) => setCode(e.target.value)} 
-          placeholder="Code d'accès" 
+          placeholder="Code d&apos;accès" 
           style={{ padding: '10px', fontSize: '16px' }} 
         />
         <button type="submit" style={{ padding: '10px', fontSize: '16px', marginLeft: '10px' }}>
