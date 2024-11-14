@@ -1,7 +1,4 @@
 .body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
   background-color: #f3f2ec;
   color: #333;
   width: 100vw;
@@ -10,9 +7,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  overflow: none;
-  overflow-y: hidden;
-  overflow-x: hidden;
 }
 .h1 {
   font-size: 3em;
