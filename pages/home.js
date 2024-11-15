@@ -1,5 +1,6 @@
 import React from 'react';
 import Navbar from '@/Component/navbar';
+import Footer from '@/Component/footer';
 import "../styles/globals.css";
 
 export async function getServerSideProps() {
@@ -24,6 +25,7 @@ export default function Home({ products }) {
   return (
     <div>
       <Navbar />
+      <Footer />
 
       {/* <h1>Nos Produits</h1>
 
