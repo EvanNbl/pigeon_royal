@@ -1,4 +1,6 @@
 import React from 'react';
+import Navbar from '@/Component/navbar';
+import "../styles/globals.css";
 
 export async function getServerSideProps() {
   try {
@@ -21,6 +23,7 @@ export async function getServerSideProps() {
 export default function Home({ products }) {
   return (
     <div>
+    <Navbar />
       <h1>Nos Produits</h1>
 
       <div>
