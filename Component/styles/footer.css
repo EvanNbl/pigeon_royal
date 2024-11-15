@@ -1,0 +1,14 @@
+footer {
+    width: 100vw;
+    height: 250px;
+    background-color: rgb(29, 29, 29);
+    margin-top: 1000px;
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 0 150px;
+}
