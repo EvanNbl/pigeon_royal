@@ -23,8 +23,9 @@ export async function getServerSideProps() {
 export default function Home({ products }) {
   return (
     <div>
-    <Navbar />
-      <h1>Nos Produits</h1>
+      <Navbar />
+
+      {/* <h1>Nos Produits</h1>
 
       <div>
         {products.length === 0 ? (
@@ -39,7 +40,7 @@ export default function Home({ products }) {
             </div>
           ))
         )}
-      </div>
+      </div> */}
     </div>
   );
 }
