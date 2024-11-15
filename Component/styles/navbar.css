@@ -1,0 +1,274 @@
+/* Conteneur principal de la barre de navigation */
+.navbar {
+    margin-top: 30px;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative; /* Nécessaire pour la position absolue de la barre de recherche */
+}
+
+/* Section des liens et icônes */
+.navbar-links, .navbar-icons {
+    padding: 0 150px;
+    width: 500px;
+}
+
+/* Liens de navigation */
+.navbar-links a {
+    text-decoration: none;
+    color: #272727;
+    font-size: 20px;
+    font-family: "allotrope", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    position: relative; /* Nécessaire pour le pseudo-élément ::before */
+}
+
+.navbar-links a:not(:last-child) {
+    margin-right: 40px; /* Espacement entre les liens */
+}
+
+/* Ajout du point rose au hover */
+.navbar-links a::before {
+    content: ''; /* Crée un élément avant */
+    position: absolute;
+    left: -15px; /* Positionne le point à gauche du texte */
+    top: 50%; /* Centre verticalement */
+    transform: translateY(-50%);
+    width: 0; /* Initialement invisible */
+    height: 0;
+    background-color: #f2b8e5; /* Couleur rose */
+    border-radius: 50%; /* Forme circulaire */
+    transition: width 0.2s ease, height 0.2s ease;
+}
+
+/* Effet hover */
+.navbar-links a:hover::before {
+    width: 7px; /* Taille du point visible */
+    height: 7px;
+}
+
+/* Logo de la barre de navigation */
+.navbar-logo {
+    width: 200px;
+}
+
+/* Conteneur des icônes */
+.navbar-icons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    justify-content: flex-end;
+}
+
+/* Conteneur du champ de recherche */
+.navbar-search {
+    display: flex;
+    border: 1px solid #272727;
+    border-radius: 50px;
+    padding: 10px 0 10px 10px;
+    transition: width 0.3s ease;
+    width: 30px; /* Largeur minimale pour l'état inactif */
+    overflow: hidden;
+    background-color: white; /* Évite tout chevauchement visuel */
+    z-index: 10; /* Priorité d'affichage au-dessus des autres éléments */
+}
+
+/* Lorsque la recherche est active */
+.navbar-search.active {
+    width: 250px; /* Largeur étendue pour inclure l'input */
+}
+
+/* Icône de recherche */
+.search-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s;
+}
+
+/* Champ de saisie pour la recherche */
+.search-input {
+    flex-grow: 1; /* Permet à l'input de prendre l'espace disponible */
+    opacity: 0; /* Caché par défaut */
+    width: 0; /* Largeur initiale minimale */
+    border: none; /* Supprime la bordure par défaut */
+    outline: none; /* Supprime le contour bleu par défaut */
+    transition: opacity 0.3s ease, width 0.3s ease;
+    font-size: 16px;
+    font-family: "allotrope", sans-serif;
+    margin-left: 10px; /* Espacement entre l'icône et l'input */
+}
+
+/* Champ de saisie actif */
+.navbar-search.active .search-input {
+    opacity: 1; /* Visible */
+    width: 100%; /* S'étend pour occuper tout l'espace */
+}
+
+/* Style des icônes générales */
+.navbar-icons a {
+    border: 1px solid #272727;
+    border-radius: 50%; /* Forme circulaire */
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white; /* Évite que l'icône ne disparaisse sur un fond clair */
+    z-index: 5; /* Assure que l'icône reste visible */
+}
+
+/* Ajout de styles spécifiques pour éviter le chevauchement */
+.navbar-icons a img {
+    display: block;
+    width: 20px;
+    height: 20px;
+}
+
+/* Effet hover sur les icônes */
+.navbar-icons a:hover, .navbar-search:hover {
+    cursor: pointer;
+    background-color: #f2b8e5;
+}
+
+.active:hover {
+    background-color: white !important; /* Empêche le changement de couleur au survol */
+}
+
+/* Responsive : masquage des liens et affichage du burger */
+@media (max-width: 1300px) {
+    .navbar-links {
+        display: none; /* Masque les liens */
+        position: absolute;
+        top: 80px;
+        left: 0;
+        background-color: white;
+        width: 100%;
+        height: 70px;
+        flex-direction: column;
+        align-items: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 50;
+    }
+
+    .navbar-links.show {
+        display: flex; /* Affiche les liens lorsque le menu est ouvert */
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .navbar-links a {
+        margin: 10px 0;
+    }
+
+    .burger-menu {
+        display: flex; /* Affiche le burger */
+        flex-direction: column;
+        justify-content: space-between;
+        width: 25px;
+        height: 20px;
+        cursor: pointer;
+        z-index: 100;
+    }
+
+    .burger-menu div {
+        background-color: #272727;
+        height: 3px;
+        width: 100%;
+        border-radius: 2px;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    /* Animation du burger pour un état actif */
+    .burger-menu.active div:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .burger-menu.active div:nth-child(2) {
+        opacity: 0;
+    }
+
+    .burger-menu.active div:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    /* Centrage des icônes dans les petits écrans */
+    .navbar-icons {
+        padding: 0 20px;
+    }
+
+    /* Logo de la barre de navigation */
+    .navbar-logo {
+        width: 150px;
+    }
+}
+
+/* Conteneur des résultats de recherche */
+.search-results {
+    position: absolute;
+    top: 120%;
+    left: 195px;
+    width: 250px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    overflow-y: auto;
+    border-radius: 20px;
+    border: 1px solid;
+  }
+  
+  /* Element de résultat de recherche */
+  .search-result-item {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+
+  .search-result-item a {
+    text-decoration: none;
+    color: #272727;
+    border: none;
+    border-bottom: 1px solid #272727;
+    border-radius: 0;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .search-result-item a:not(:last-child) {
+    border-bottom: 1px solid #272727;
+  }
+
+  .search-result-item a div {
+    display: flex;
+  }
+  
+  .search-result-item:hover {
+    background-color: #686868;
+  }
+  
+  .search-result-item img {
+    border-radius: 5%;
+    margin-right: 10px;
+  }
+  
+  .search-result-item span {
+    font-size: 16px;
+    font-family: "allotrope", sans-serif;
+    color: #272727;
+    display: block;
+  }
+  
+  .no-results-message {
+    padding: 10px;
+    text-align: center;
+    color: #666;
+    font-size: 14px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    margin-top: 10px;
+  }
+  
