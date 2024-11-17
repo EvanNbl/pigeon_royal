@@ -19,7 +19,7 @@
     text-decoration: none;
     color: #272727;
     font-size: 20px;
-    font-family: "allotrope", sans-serif;
+    font-family: "acumin-variable", sans-serif;
     font-weight: 700;
     font-style: normal;
     position: relative; /* Nécessaire pour le pseudo-élément ::before */
@@ -98,7 +98,8 @@
     outline: none; /* Supprime le contour bleu par défaut */
     transition: opacity 0.3s ease, width 0.3s ease;
     font-size: 16px;
-    font-family: "allotrope", sans-serif;
+    font-family: "acumin-variable", sans-serif;
+    font-weight: 700;
     margin-left: 10px; /* Espacement entre l'icône et l'input */
 }
 
