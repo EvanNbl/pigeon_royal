@@ -12,6 +12,7 @@ export default function Footer() {
             <div className="footer-content">
                 <div className="footer-logo">
                     <Image src={logo} alt="Logo" />
+                    <p>©Pigeon Royal 2024 - V0.0.02 112420 </p>
                 </div>
             </div>
         </footer>
