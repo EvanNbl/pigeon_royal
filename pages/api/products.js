@@ -5,6 +5,7 @@ export default async function handler(req, res) {
   if (req.method === 'GET') {
     try {
       const limit = parseInt(req.query.limit) || 3;
+      const sort = req.query.sort || 'asc'; // Valeur par défaut : 'asc' pour ascendant
 
       const products = await stripe.products.list({
         limit,
@@ -21,9 +22,21 @@ export default async function handler(req, res) {
             images: product.images,
             price: price.unit_amount / 100,
             currency: price.currency,
+            created: product.created,
           };
         })
       );
+
+      // Tri des produits par date
+      productsWithPrices.sort((a, b) => {
+        if (sort === 'asc') {
+          return a.created - b.created;
+        } else if (sort === 'desc') {
+          return b.created - a.created;
+        } else {
+          return 0;
+        }
+      });
 
       res.status(200).json(productsWithPrices);
     } catch (error) {
