@@ -30,7 +30,44 @@ export default function Card({ title, card }) {
     <div className="card-container">
       <h1 className="card-title">{title}</h1>
       {loading ? (
-        <p>Chargement...</p>
+        <div className="cards">
+          <div className="card">
+            <div className="card-content">
+              <div className="card-content-img-loading" />
+              <div className="card-content-div-text">
+                <div className="card-content-title-loading" />
+                <div className="card-content-prix-loading" />
+              </div>
+            </div>
+          </div>
+          <div className="card">
+            <div className="card-content">
+              <div className="card-content-img-loading" />
+              <div className="card-content-div-text">
+                <div className="card-content-title-loading" />
+                <div className="card-content-prix-loading" />
+              </div>
+            </div>
+          </div>
+          <div className="card">
+            <div className="card-content">
+              <div className="card-content-img-loading" />
+              <div className="card-content-div-text">
+                <div className="card-content-title-loading" />
+                <div className="card-content-prix-loading" />
+              </div>
+            </div>
+          </div>
+          <div className="card">
+            <div className="card-content">
+              <div className="card-content-img-loading" />
+              <div className="card-content-div-text">
+                <div className="card-content-title-loading" />
+                <div className="card-content-prix-loading" />
+              </div>
+            </div>
+          </div>
+        </div>
       ) : (
         <div className="cards">
           {products.length > 0 ? (
