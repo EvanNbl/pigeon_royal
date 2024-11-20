@@ -14,7 +14,7 @@ export default function Home({ products }) {
           <source src="../pub.mp4" type="video/mp4" />
         </video>
       </div>
-      <Card title="NOUVELLE COLLECTION" type="home"/>
+      <Card title="NOUVELLE COLLECTION" type="home" card="6"/>
       <Footer />
     </div>
   );
