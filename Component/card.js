@@ -37,9 +37,10 @@ export default function Card({ title, card }) {
               <div key={index} className="card">
                 <div className="card-content">
                   <img className="card-content-img" src={product.images[0]} alt={product.name} />
-                  <h2 className="card-content-title">{product.name}</h2>
-                  <p className="card-content-desc">{product.description}</p>
-                  <p className="card-content-prix">{product.price} €</p>
+                  <div className="card-content-div-text">
+                    <h2 className="card-content-title">{product.name}</h2>
+                    <p className="card-content-prix">{product.price} €</p>
+                  </div>
                 </div>
               </div>
             ))
