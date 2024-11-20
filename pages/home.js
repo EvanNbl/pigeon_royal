@@ -37,7 +37,7 @@ export default function Home() {
           <source src="../pub.mp4" type="video/mp4" />
         </video>
       </div>
-      <Card title="NOUVELLE COLLECTION" type="home" card="6" />
+      <Card title="NOUVELLE COLLECTION" type="home" card="4" />
       <Footer />
     </div>
   );

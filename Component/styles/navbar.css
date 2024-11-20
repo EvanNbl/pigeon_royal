@@ -1,20 +1,17 @@
-/* Conteneur principal de la barre de navigation */
 .navbar {
     margin-top: 30px;
     width: 100vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: relative; /* Nécessaire pour la position absolue de la barre de recherche */
+    position: relative;
 }
 
-/* Section des liens et icônes */
 .navbar-links, .navbar-icons {
     padding: 0 150px;
     width: 500px;
 }
 
-/* Liens de navigation */
 .navbar-links a {
     text-decoration: none;
     color: #272727;
@@ -22,39 +19,35 @@
     font-family: "acumin-variable", sans-serif;
     font-weight: 700;
     font-style: normal;
-    position: relative; /* Nécessaire pour le pseudo-élément ::before */
+    position: relative;
 }
 
 .navbar-links a:not(:last-child) {
-    margin-right: 40px; /* Espacement entre les liens */
+    margin-right: 40px;
 }
 
-/* Ajout du point rose au hover */
 .navbar-links a::before {
-    content: ''; /* Crée un élément avant */
+    content: ''; 
     position: absolute;
-    left: -15px; /* Positionne le point à gauche du texte */
-    top: 50%; /* Centre verticalement */
+    left: -15px; 
+    top: 50%;
     transform: translateY(-50%);
-    width: 0; /* Initialement invisible */
+    width: 0;
     height: 0;
-    background-color: #f2b8e5; /* Couleur rose */
-    border-radius: 50%; /* Forme circulaire */
+    background-color: #f2b8e5;
+    border-radius: 50%;
     transition: width 0.2s ease, height 0.2s ease;
 }
 
-/* Effet hover */
 .navbar-links a:hover::before {
-    width: 7px; /* Taille du point visible */
+    width: 7px;
     height: 7px;
 }
 
-/* Logo de la barre de navigation */
 .navbar-logo {
     width: 200px;
 }
 
-/* Conteneur des icônes */
 .navbar-icons {
     display: flex;
     align-items: center;
@@ -63,7 +56,6 @@
     justify-content: flex-end;
 }
 
-/* Conteneur du champ de recherche */
 .navbar-search {
     display: flex;
     border: 1px solid #272727;
