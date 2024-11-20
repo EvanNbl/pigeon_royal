@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
 import './styles/card.css';
 
 export default function Card({ title, card }) {
@@ -34,7 +35,7 @@ export default function Card({ title, card }) {
         <div className="cards">
           {products.length > 0 ? (
             products.map((product, index) => (
-              <div key={index} className="card">
+              <Link href={"/product/" + product.id} key={index} className="card">
                 <div className="card-content">
                   <img className="card-content-img" src={product.images[0]} alt={product.name} />
                   <div className="card-content-div-text">
@@ -42,7 +43,7 @@ export default function Card({ title, card }) {
                     <p className="card-content-prix">{product.price} €</p>
                   </div>
                 </div>
-              </div>
+              </Link>
             ))
           ) : (
             <p>Aucun produit trouvé.</p>
