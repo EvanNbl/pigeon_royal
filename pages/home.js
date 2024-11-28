@@ -29,7 +29,7 @@ export default function Home() {
   return (
     <div className="home">
       <div className="home-header">
-        <p>Dev Version - Build 0.0.02 112420 | [ version mobile: 🔴, version web: 🟢, api: {apiStatus} ]</p>
+        <p>Dev Version - Build 0.0.03 112422 | [ version mobile: 🔴, version web: 🟢, api: {apiStatus} ]</p>
       </div>
       <Navbar />
       <div className="video-container">
