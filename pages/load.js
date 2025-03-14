@@ -9,7 +9,8 @@ export default function Maintenance() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (code === process.env.NEXT_PUBLIC_ACCESS_CODE) {
+    // if (code === process.env.NEXT_PUBLIC_ACCESS_CODE) {
+    if (code === '1234') {
       document.cookie = "access_granted=true; path=/; SameSite=Lax";
       router.push('/home');
     } else {
